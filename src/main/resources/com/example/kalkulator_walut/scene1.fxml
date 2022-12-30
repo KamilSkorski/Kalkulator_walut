@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kalkulator_walut.Controller">
+   <children>
+      <Text fx:id="calculateTexts1" layoutX="30.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oblicz po:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="60.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="dateTexts1" layoutX="30.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="calculatePicker" layoutX="149.0" layoutY="32.0" prefHeight="26.0" prefWidth="210.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="60.0" />
+      <Text fx:id="fromTexts1" layoutX="30.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Z:" wrappingWidth="16.25" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="140.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="toTexts1" layoutX="40.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NA:" wrappingWidth="36.25" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="fromPicker" layoutX="53.0" layoutY="141.0" prefHeight="26.0" prefWidth="210.0" AnchorPane.leftAnchor="70.0" />
+      <ComboBox fx:id="toPicker" layoutX="70.0" layoutY="182.0" prefHeight="26.0" prefWidth="210.0" AnchorPane.topAnchor="180.0" />
+      <Button fx:id="calculateButtons1" layoutX="154.0" layoutY="476.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="70.0" prefWidth="200.0" text="Oblicz" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Button>
+      <TextField fx:id="dataField" alignment="CENTER" layoutX="66.0" layoutY="245.0" prefHeight="50.0" prefWidth="256.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="240.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+      <DatePicker fx:id="datePicker" layoutX="118.0" layoutY="103.0" prefHeight="26.0" prefWidth="210.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="100.0" />
+      <Label fx:id="fromLabel" layoutX="175.0" layoutY="299.0" prefHeight="32.0" prefWidth="45.0" text="PLN" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="290.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="resultLabel" alignment="CENTER" layoutX="27.0" layoutY="329.0" prefHeight="58.0" prefWidth="339.0" text="Label" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="330.0">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="toLabel" layoutX="148.0" layoutY="371.0" text="USD" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="380.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="connectionStatusLabel" layoutX="136.0" layoutY="519.0" prefHeight="18.0" prefWidth="107.0" text="Status_polaczenia" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="134.0" />
+   </children>
+</AnchorPane>
