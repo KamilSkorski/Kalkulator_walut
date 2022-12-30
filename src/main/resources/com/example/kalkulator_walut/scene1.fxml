@@ -21,7 +21,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <ComboBox fx:id="calculatePicker" layoutX="149.0" layoutY="32.0" prefHeight="26.0" prefWidth="210.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="60.0" />
+      <ComboBox fx:id="calculatePicker" layoutX="149.0" layoutY="32.0" onAction="#changeType" prefHeight="26.0" prefWidth="210.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="60.0" />
       <Text fx:id="fromTexts1" layoutX="30.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Z:" wrappingWidth="16.25" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="140.0">
          <font>
             <Font size="20.0" />
@@ -59,6 +59,6 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label fx:id="connectionStatusLabel" layoutX="136.0" layoutY="519.0" prefHeight="18.0" prefWidth="107.0" text="Status_polaczenia" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="134.0" />
+      <Label fx:id="connectionStatusLabel" layoutX="136.0" layoutY="519.0" prefHeight="18.0" prefWidth="107.0" text="Połączono" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="134.0" />
    </children>
 </AnchorPane>
