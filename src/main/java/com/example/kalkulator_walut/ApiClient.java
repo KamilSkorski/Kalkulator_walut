@@ -13,14 +13,20 @@ public class ApiClient
     public HttpClient client;
     public HttpRequest request;
     public HttpResponse<String> response;
-    public String url = "http://api.nbp.pl/api/exchangerates/rates/A/";
+    public String url = "http://api.nbp.pl/api/exchangerates/tables/A/";
     public String startUrl = "http://api.nbp.pl/api/exchangerates/tables/A/";
 
 
     public ApiClient() throws IOException, InterruptedException {
     client = HttpClient.newHttpClient();
-    setRequest();
+    setRequest(startUrl);
     response = sendRequest();
+    }
+
+    public ApiClient(String url) throws IOException, InterruptedException {
+        client = HttpClient.newHttpClient();
+        setRequest(url);
+        response = sendRequest();
     }
 
 
@@ -29,11 +35,11 @@ public class ApiClient
         return request;
     }
 
-    public void setRequest()
+    public void setRequest(String url)
     {
         this.request = HttpRequest.newBuilder()
                 .header("accept", "application/json")
-                .uri(URI.create(startUrl))
+                .uri(URI.create(url))
                 .timeout(Duration.ofSeconds(10))
                 .GET()
                 .build();

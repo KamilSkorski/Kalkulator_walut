@@ -8,16 +8,14 @@ import java.util.ArrayList;
 
 public class Parser
 {
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     public ArrayList<Currency> parseData(HttpResponse<String> response)
     {
         String body = response.body();
         String bodyToConvert = body.substring(73, body.length()-2);
         Type currencyListType = new TypeToken<ArrayList<Currency>>(){}.getType();
-        System.out.println(bodyToConvert);
         ArrayList<Currency> listCurrency = gson.fromJson(bodyToConvert, currencyListType);
-        System.out.println(bodyToConvert);
         return listCurrency;
     }
 
