@@ -103,12 +103,12 @@ public class Controller implements Initializable {
     @FXML
     private void changeType() {
         String prev = calculatePicker.getValue();
-        if (calculatePicker.getValue().equals("Kod waluty") || calculatePicker.getValue().equals(prev)) {
+        if (calculatePicker.getValue().equals("Kod waluty") || calculatePicker.getValue()!=prev) {
             fromPicker.getItems().clear();
             fillComboBoxCodeStart(fromPicker, codes);
             toPicker.getItems().clear();
             fillComboBoxCodeStart(toPicker, codes);
-        } else if (calculatePicker.getValue().equals("Nazwa waluty") || calculatePicker.getValue().equals(prev)) {
+        } else if (calculatePicker.getValue().equals("Nazwa waluty") || calculatePicker.getValue()!=prev) {
             fromPicker.getItems().clear();
             fillComboBoxCodeStart(fromPicker, names);
             toPicker.getItems().clear();
@@ -141,10 +141,10 @@ public class Controller implements Initializable {
     }
 
     private Float calculateValue(String currencyOne, String currencyTwo) {
-        Float one;
-        Float two;
-        Float datafFromField;
-        Float result;
+        float one;
+        float two;
+        float datafFromField;
+        float result;
 
         one = Float.parseFloat(codeMidMap.get(currencyOne));
         two = Float.parseFloat(codeMidMap.get(currencyTwo));
