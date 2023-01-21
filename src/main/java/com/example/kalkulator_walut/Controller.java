@@ -44,16 +44,17 @@ public class Controller implements Initializable {
     @FXML
     private Button calculateButton;
 
+
     public void initialize(URL location, ResourceBundle resources) {
-        //Initialize CalculatePicker
-        calculatePicker.getItems().addAll(calculateType);
-        calculatePicker.setValue(calculateType[0]);
+
         //Send HTTP request
         try {
             client = new ApiClient();
             Parser parser = new Parser();
             currency = parser.parseData(client.response);
             fillArrayLists();
+            calculatePicker.getItems().addAll(calculateType);
+            calculatePicker.setValue(calculateType[0]);
             fillComboBoxCodeStart(fromPicker, codes);
             fillComboBoxCodeStart(toPicker, codes);
             setLabel(fromPicker, fromLabel);

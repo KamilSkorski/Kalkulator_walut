@@ -13,7 +13,6 @@ public class ApiClient
     private HttpClient client;
     private HttpRequest request;
     public HttpResponse<String> response;
-    private String url = "http://api.nbp.pl/api/exchangerates/tables/A/";
     private String startUrl = "http://api.nbp.pl/api/exchangerates/tables/A/";
 
 
@@ -27,12 +26,6 @@ public class ApiClient
         client = HttpClient.newHttpClient();
         setRequest(url);
         response = sendRequest();
-    }
-
-
-    public HttpRequest getRequest()
-    {
-        return request;
     }
 
     public void setRequest(String url)
