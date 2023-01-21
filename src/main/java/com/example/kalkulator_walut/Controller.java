@@ -60,9 +60,10 @@ public class Controller implements Initializable {
             setLabel(toPicker, toLabel);
             setHashMap(mid, codes);
             setDatepicker();
-            dateLabel.setText("Dane aktualne na dzień: " + date.now());
+            dateLabel.setText("Dane z dnia: " + datePicker.getValue());
         } catch (Exception ex) {
             connectionStatusLabel.setText("Błąd połączenia");
+            calculateButton.setDisable(true);
         }
     }
 
@@ -102,18 +103,18 @@ public class Controller implements Initializable {
 
     @FXML
     private void changeType() {
-        String prev = calculatePicker.getValue();
-        if (calculatePicker.getValue().equals("Kod waluty") || calculatePicker.getValue()!=prev) {
-            fromPicker.getItems().clear();
-            fillComboBoxCodeStart(fromPicker, codes);
-            toPicker.getItems().clear();
-            fillComboBoxCodeStart(toPicker, codes);
-        } else if (calculatePicker.getValue().equals("Nazwa waluty") || calculatePicker.getValue()!=prev) {
-            fromPicker.getItems().clear();
-            fillComboBoxCodeStart(fromPicker, names);
-            toPicker.getItems().clear();
-            fillComboBoxCodeStart(toPicker, names);
-        }
+            String prev = calculatePicker.getValue();
+            if (calculatePicker.getValue().equals("Kod waluty") || calculatePicker.getValue() != prev) {
+                fromPicker.getItems().clear();
+                fillComboBoxCodeStart(fromPicker, codes);
+                toPicker.getItems().clear();
+                fillComboBoxCodeStart(toPicker, codes);
+            } else if (calculatePicker.getValue().equals("Nazwa waluty") || calculatePicker.getValue() != prev) {
+                fromPicker.getItems().clear();
+                fillComboBoxCodeStart(fromPicker, names);
+                toPicker.getItems().clear();
+                fillComboBoxCodeStart(toPicker, names);
+            }
     }
 
     private void setLabel(ComboBox box, Label label) {
@@ -176,7 +177,7 @@ public class Controller implements Initializable {
             names.clear();
             fillArrayLists();
             setHashMap(mid, codes);
-            dateLabel.setText("Dane aktualne na dzień: " + datePicker.getValue());
+            dateLabel.setText("Dane z dnia: " + datePicker.getValue());
             calculateButton.setDisable(false);
         } catch (Exception ex) {
             dateLabel.setText("Brak danych w podanym dniu");

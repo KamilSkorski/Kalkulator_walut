@@ -10,11 +10,11 @@ import java.time.Duration;
 
 public class ApiClient
 {
-    public HttpClient client;
-    public HttpRequest request;
+    private HttpClient client;
+    private HttpRequest request;
     public HttpResponse<String> response;
-    public String url = "http://api.nbp.pl/api/exchangerates/tables/A/";
-    public String startUrl = "http://api.nbp.pl/api/exchangerates/tables/A/";
+    private String url = "http://api.nbp.pl/api/exchangerates/tables/A/";
+    private String startUrl = "http://api.nbp.pl/api/exchangerates/tables/A/";
 
 
     public ApiClient() throws IOException, InterruptedException {
